@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class SingerItemView extends LinearLayout {
-    // textView를 변수로 선언 (21)
+    // textView를 변수로 선언 (23)
     TextView textView1;
     TextView textView2;
 
@@ -32,17 +32,17 @@ public class SingerItemView extends LinearLayout {
 
         /* 'singer_item.xml'을 inflation 해서 이곳에 붙여주는 역활을 하도록 지정한다.
         *  inflation을 위해서 LAYOUT_INFLATER_SERVICE 라고 하는 상수를 넣어서
-        *  시스템 서비스를 참조할 수 있다. (19) */
+        *  시스템 서비스를 참조할 수 있다. (21) */
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.singer_item, this, true);
 
         /* 이렇게 inflation 하고 나면 xml layout 안에 있는 imageView textView 등을
-        *  findViewById로 참조할 수 있다. (20) */
+        *  findViewById로 참조할 수 있다. (22) */
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
     }
 
-    // data를 설정해 줄 method를 정의해 준다. (22)
+    // data를 설정해 줄 method를 정의해 준다. (24)
     public void setName(String name) {
         textView1.setText(name);
     }
@@ -51,5 +51,5 @@ public class SingerItemView extends LinearLayout {
         textView2.setText(mobile);
     }
 
-    // 'MainActivity'의 getView()에서 coding 한다. (23)
+    // 'MainActivity'의 getView()에서 coding 한다. (25)
 }

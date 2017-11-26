@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
         // listView를 찾는다. (1)
         ListView listView = findViewById(R.id.listView);
 
-        // ListView에다 Adapter 객체를 만든다. (28)
+        // ListView에다 Adapter 객체를 만든다. (30)
         SingerAdapter adapter = new SingerAdapter();
 
         /* 'addItem()'에 'new SingerItem'이라고 생성자를 통해 객체를 만들어서
-        *  파라미터로 전달해서 data를 추가한다. (30) */
+        *  파라미터로 전달해서 data를 추가한다. (32) */
         adapter.addItem(new SingerItem("소녀시대", "010-1000-10000"));
         adapter.addItem(new SingerItem("걸스데이", "010-2000-20000"));
         adapter.addItem(new SingerItem("여자친구", "010-3000-30000"));
         adapter.addItem(new SingerItem("티아라", "010-4000-40000"));
         adapter.addItem(new SingerItem("애프터스쿨", "010-5000-50000"));
 
-        // 'setAdapter()'에 adapter 객체를 파라미터로 전달한다. (29)
+        // 'setAdapter()'에 adapter 객체를 파라미터로 전달한다. (31)
         listView.setAdapter(adapter);
     }
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         /* SingerItem 객체를 ArrayList에 넣어주면
         *  SingerAdapter에 SingerItem 객체가 여러개 들어갈 수 있게 된다. (11) */
 
-        // 외부에서 data를 추가할 수 있도록 method를 정의한다. (27)
+        // 외부에서 data를 추가할 수 있도록 method를 정의한다. (29)
         public void addItem(SingerItem item) {
             items.add(item);
         }
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int i) {
-            return null;
+            return items.get(i);
         }
         // items.get(i)를 리턴해서 position을 알려준다. 여기에서 i는 index 값이다. (13)
 
@@ -77,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
 
-            // 'SingerItemView'를 변수 'singerItemView'에 할당한다. (24)
+            // 'SingerItemView'를 변수 'singerItemView'에 할당한다. (26)
             SingerItemView singerItemView = new SingerItemView(getApplicationContext());
 
-            // 몇번째 view 인지 position 값인 'i'를 설정해 준다. (25)
+            // 몇번째 singerItemView 인지 position 값인 'i'를 설정해 준다. (27)
             SingerItem item = items.get(i);
             singerItemView.setName(item.getName());
             singerItemView.setMobile(item.getMobile());
 
-            // 'view'를 리턴해 준다. (26)
+            // 'singerItemView'를 리턴해 준다. (28)
             return singerItemView;
         }
         /* getView는 화면에 나타나는 각각의 View도 Adapter에서 만들어 달라는 의미.
