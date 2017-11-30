@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         /* 'addItem()'에 'new SingerItem'이라고 생성자를 통해 객체를 만들어서
         *  파라미터로 전달해서 data를 추가한다. (32) */
-        adapter.addItem(new SingerItem("소녀시대", "010-1000-10000", R.drawable.icon_1));
-        adapter.addItem(new SingerItem("걸스데이", "010-2000-20000", R.drawable.icon_2));
-        adapter.addItem(new SingerItem("여자친구", "010-3000-30000", R.drawable.icon_3));
-        adapter.addItem(new SingerItem("티아라", "010-4000-40000", R.drawable.icon_4));
-        adapter.addItem(new SingerItem("애프터스쿨", "010-5000-50000", R.drawable.icon_5));
+        adapter.addItem(new SingerItem("소녀시대", "010-1000-1000", R.drawable.icon_1));
+        adapter.addItem(new SingerItem("걸스데이", "010-2000-2000", R.drawable.icon_2));
+        adapter.addItem(new SingerItem("여자친구", "010-3000-3000", R.drawable.icon_3));
+        adapter.addItem(new SingerItem("티아라", "010-4000-4000", R.drawable.icon_4));
+        adapter.addItem(new SingerItem("애프터스쿨", "010-5000-5000", R.drawable.icon_5));
 
         // 'setAdapter()'에 adapter 객체를 파라미터로 전달한다. (31)
         listView.setAdapter(adapter);
@@ -124,31 +124,31 @@ public class MainActivity extends AppCompatActivity {
 
             /*
 
-            // 'SingerItemView'를 변수 'singerItemView'에 할당한다. (26)
-            SingerItemView singerItemView = new SingerItemView(getApplicationContext());
+            // 'SingerItemView'를 변수 'itemView'에 할당한다. (26)
+            SingerItemView itemView = new SingerItemView(getApplicationContext());
 
             */
 
             // View를 재사용하는 코드 작성 (44)
-            SingerItemView singerItemView = null;
+            SingerItemView itemView = null;
             if (view == null) {
-                singerItemView = new SingerItemView(getApplicationContext());
+                itemView = new SingerItemView(getApplicationContext());
             } else {
-                singerItemView = (SingerItemView) view;
+                itemView = (SingerItemView) view;
             }
 
-            // 몇번째 singerItemView 인지 position 값인 'i'를 설정해 준다. (27)
+            // 몇번째 itemView 인지 position 값인 'i'를 설정해 준다. (27)
             SingerItem item = items.get(i);
-            singerItemView.setName(item.getName());
-            singerItemView.setMobile(item.getMobile());
-            singerItemView.setImage(item.getResId());
+            itemView.setName(item.getName());
+            itemView.setMobile(item.getMobile());
+            itemView.setImage(item.getResId());
 
-            // 'singerItemView'를 리턴해 준다. (28)
-            return singerItemView;
+            // 'itemView'를 리턴해 준다. (28)
+            return itemView;
         }
         /* getView는 화면에 나타나는 각각의 View도 Adapter에서 만들어 달라는 의미.
         *  View는 layout으로 구성된다. 그러므로 layout에 해당하는 부분화면을 정의하고
         *  그것을 이용해 객체를 만든 다음에 data를 설정하고 return을 해준다.
-        *  부분화면 정의를 위해 'singer_item.xml'을 만든다. (15) */
+        *  부분화면 정의를 위해 'singer_itemview.xml'을 만든다. (15) */
     }
 }

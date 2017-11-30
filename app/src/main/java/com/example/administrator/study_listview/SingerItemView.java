@@ -32,11 +32,11 @@ public class SingerItemView extends LinearLayout {
     //초기화를 위한 'init'이라는 method를 정의하고 (18)
     private void init(Context context) {
 
-        /* 'singer_item.xml'을 inflation 해서 이곳에 붙여주는 역활을 하도록 지정한다.
+        /* 'singer_itemview.xml.xml'을 inflation 해서 이곳에 붙여주는 역활을 하도록 지정한다.
         *  inflation을 위해서 LAYOUT_INFLATER_SERVICE 라고 하는 상수를 넣어서
         *  시스템 서비스를 참조할 수 있다. (21) */
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.singer_item, this, true);
+        inflater.inflate(R.layout.singer_itemview, this, true);
 
         /* 이렇게 inflation 하고 나면 xml layout 안에 있는 imageView textView 등을
         *  findViewById로 참조할 수 있다. (22) */
