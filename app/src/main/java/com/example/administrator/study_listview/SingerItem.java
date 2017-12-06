@@ -1,9 +1,8 @@
 package com.example.administrator.study_listview;
 
-// 이 class 안에는 단순히 걸그룹에 대한 data를 담아 둘 것이다.
 public class SingerItem {
 
-    // 한 명의 걸그룹에 대한 data를 정의한다. (6)
+    // 변수 선언 (6)
     String name;
     String mobile;
     int resId;
@@ -41,8 +40,7 @@ public class SingerItem {
         this.resId = resId;
     }
 
-    /* 객체 안에 들어있는 data를 문자열로 출력하기 위한 'toString()' method를
-        *  'Alt+Insert'를 통해 만든다. (9) */
+    // 객체 안에 들어있는 data를 문자열로 출력하기 위한 'toString()' method 생성 (9)
     @Override
     public String toString() {
         return "SingerItem{" +
@@ -51,5 +49,5 @@ public class SingerItem {
                 '}';
     }
 
-    /* 이렇게 만들어진 SingerItem을 MainActivity.java의 ArrayList에 집어넣는다. (10) */
+    // 이렇게 만들어진 'SingerItem'을 'MainActivity.java'의 ArrayList에 넣는다. (10)
 }
